@@ -1,0 +1,10 @@
+.navbarim{
+    background-color: transparent;
+    opacity: 1;
+    height: 600px;
+}
+.navbarim:hover{
+
+    background-color:#fff;
+    color: white;
+}
