@@ -1,3 +1,13 @@
+.mynavbar.hovered {
+    background-color: white;
+}
+
+.mynavbar.hovered a, .mynavbar.hovered h1 {
+    color: black;
+}
+
+
+
 .mynavbar {
     background-color: transparent;
     opacity: 1;
