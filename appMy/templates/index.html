@@ -38,81 +38,73 @@
         </div>
 
         <div class="container">
-            <h3 class="heading h1 text-black text-center text-bold m-5">Kampanyalı Paketler.</h3>
+            <h1 class="heading h1 text-black text-center text-bold m-5" style="font-size: 60px; font-weight: bold;">Kampanyalı Paketler.</h1>
             <div class="row">
                 {% for i in firstproducts  %}
                 <div class="col-3">
                     
                     <div class= "card">
                         <img src= "{{ i.img.url }}" alt="">
-                        <a href="">{{ i.title }}</a>
-                        <small>{{ i.price }}</small>
-                        <button>Sepete Ekle</button>
+                        <a class="text-center text-black fw-bold" href="">{{ i.title }}</a>
+                
+                        <div style="display: flex; justify-content: center;">
+                            <p style="font-weight: bold; color: rgb(132, 216, 5);"> {{ i.price }}&emsp;<del style="color: black;">{{ i.oldprice }}</del></p>
+                        </div>
+                     
+                        <div class="text-center"><button  style="background-color: white;  border: 2px solid black; width: 135px; height: 50px; ">Sepete Ekle</button> </div>
                     </div>
                     
                 </div>
                 {% endfor %}
             </div>
-            <div style="display: flex; justify-content: center;">
-                <div><img width="70%" height="550px" src="{% static 'img/bosresim4.webp' %}" alt=""></div>
-                <div style="width: 30% ;display: flex; justify-content: center; align-items: center;">
-                    <h2>Yüksek Öğün Tozu</h2>
-                    <p >Yüksek öğün tozu ile hedeflerinize kolayca ulaşabilirsiniz. Kilo verme, kas kazanma veya sağlıklı beslenmek için sizlere yardımcı olacaktır.</p>
+            <div style="display: flex; justify-content: center; margin-top: 200px;">
+                <div><img width="600px" height="550px" src="{% static 'img/bosresim4.webp' %}" alt=""></div>
+                <div style="width: 100% ;display: flex; justify-content: center; align-items: center;">
+                    <div>
+                        <h1 style="color: black; font-weight: bold;"  >Yüksek Öğün Tozu</h1>
+                        <p >Yüksek öğün tozu ile hedeflerinize kolayca ulaşabilirsiniz. Kilo verme, kas <br> kazanma veya sağlıklı beslenmek için sizlere yardımcı olacaktır.</p>
+                    </div>
                 </div>
             </div>
 
 
-            <h3 class="heading h1 text-black text-center text-bold m-5">Yüksek proteinli bar.</h3>
-            <div class="d-flex justify-content-center" >
+            <h1  class="heading h1 text-black text-center text-bold " style="margin-top: 120px; font-size: 75px; font-weight: bold;">Yüksek proteinli bar.</h1>
+            <div class="d-flex justify-content-center" style="margin-top: 100px;" >
                 {% for i in secondproducts %}
                 <div class="mx-3" style="text-align: -webkit-center;">
                     <div style="width: 300px; height: 300px;" class= "justify-content-center card">
-                        <img width="300px" height="400px" src="{{ i.img.url }}" alt="">
-                        <a href="">{{ i.title }}</a>
-                        <small>{{ i.price }}</small>
-                        <button>Sepete Ekle</button>
+                        <img src= "{{ i.img.url }}" alt="">
+                        <a class="text-center text-black fw-bold" href="">{{ i.title }}</a>
+                
+                        <div style="display: flex; justify-content: center;">
+                            <p style="font-weight: bold; color: rgb(132, 216, 5);"> {{ i.price }}&emsp;<del style="color: black;">{{ i.oldprice }}</del></p>
+                        </div>
                     </div>
                 </div>   
                 {% endfor %}
             </div>
         </div>
-        <div style="margin-top: 120px; display: flex; justify-content: center; width: 100%; height: 750px;">
-            <div class="position-relative">
-                <div style="background-color: orangered; width: 70%; height: 700px;"></div>
-                <div >
-                    <img width="60%" height="650px" style="position: absolute; bottom: 3.5%; left: 20%;" src="{% static 'img/bosresim.webp' %}" alt="">
-                </div>
-            </div>
-            <div   style="text-align: -webkit-center; width: 40%; height: auto; justify-content: center; align-items: center;">
-                <h2>Herkes için sağlıklı atıştırmalıklar</h2>
-                <p>Enerji için hurma, bağışıklık için probiyotikler, kas iyileşmesi için protein. Bitkisel proteinler açısından çok zengin ve doğal şeker dışında ilave şeker bulunmayan bu atıştırmalık, protein alımını sağlıklı bir şekilde artırmak isteyen sporcular için antrenman öncesi veya sonrası ideal bir atıştırmalıktır.</p>
-                <button style="border: 2px solid black; color: black; width: 200px; height: 150px;">Hemen keşfet.</button>
-            </div>
-        </div>
-        <div class="my-5">
-            <div class="row">
-                <div class="col-6 text-center">
-                    <h2>Herkes için sağlıklı atıştırmalıklar</h2>
-                    <p>Enerji için hurma, bağışıklık için probiyotikler, kas iyileşmesi için protein. Bitkisel proteinler açısından çok zengin ve doğal şeker dışında ilave şeker bulunmayan bu atıştırmalık, protein alımını sağlıklı bir şekilde artırmak isteyen sporcular için antrenman öncesi veya sonrası ideal bir atıştırmalıktır.</p>
-                    <button style="border: 2px solid black; color: black; width: 200px; height: 150px;">Hemen keşfet.</button>
-                </div>
-                <div class="col-6">
-                    <div >
-                        <img width="60%" height="650px" src="{% static 'img/bosresim2.webp' %}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <img width="100%" height="600px" src="{% static 'img/bosresim3.webp' %}" alt="">
-        </div>
 
+
+
+        <div class="a" style="margin-top: 120px; display: flex; justify-content: center; width: 100%; height: 750px;">
+            <div style="width: 50%;" class="position-relative">
+                <div style="background-color: orangered; width: 70%; height: 650px;"></div>
+                <div >
+                    <img width="60%" height="575px" style="position: absolute; bottom: 19%; left: 20%;" src="{% static 'img/bosresim.webp' %}" alt="">
+                </div>
+            </div>
+            <div style="width: 50%; height: auto; display: flex; justify-content: center; align-items: center;">
+                <div class="mybuttondiv">
+                    <h1 style="font-weight: bold; font-size: 50px; color: black;" class="text-center">Herkes için sağlıklı <br> atıştırmalıklar</h1>
+                    <p class="text-center">Enerji için hurma, bağışıklık için probiyotikler, kas iyileşmesi için protein. <br> Bitkisel proteinler açısından çok zengin ve doğal şeker dışında ilave <br> şeker bulunmayan bu atıştırmalık, protein alımını sağlıklı bir şekilde <br> artırmak isteyen sporcular için antrenman öncesi veya sonrası ideal bir <br> atıştırmalıktır.</p>
+                    <div class="text-center mybutton"><button style="background-color: white;  border: 2px solid black; color: black; width: 200px; height: 70px;">Hemen keşfet.</button></div>
+                </div>
+            </div>
+        </div>
 
 
     </main>
     <!-- MDB -->
-<script
-type="text/javascript"
-src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
-></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
 {% endblock body %}
