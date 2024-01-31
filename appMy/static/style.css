@@ -5,7 +5,9 @@
 .mynavbar.hovered a, .mynavbar.hovered h1 {
     color: black;
 }
-
+.logo img:hover{
+    color: black;
+}
 
 
 .mynavbar {
@@ -33,7 +35,9 @@ button:hover {
     border: 2px solid white !important;
 }
 
-
+.mobillogo{
+    display: none;
+}
 .mynavbar:hover {
     background-color: white;
 }
@@ -48,17 +52,21 @@ button:hover {
 .card{
     box-shadow: none !important;
 }
-
+.mobilikon{
+    display: none;
+}
 /* RESPONSİVE */
-
-@media screen and (max-width: 987px) {
-    
-    .navbar-collapse {
-        display: block !important;
-    }
-    .navbar-toggler {
-        display: none !important;
+/* Eğer 1200px altına düşerse */
+@media screen and (max-width: 1200px) {
+    .mynavbar {
+        display: none;
     }
 
+    .mobillogo{
+        display: block;
+        justify-content: center;
+        align-self: center;
+    }
 
 }
+

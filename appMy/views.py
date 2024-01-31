@@ -13,10 +13,12 @@ def indexPage(request):
     category_list =Category.objects.all()
     firstproducts =Product.objects.all()   
     secondproducts =Product.objects.all() 
+    randomproductlist= Product.objects.all().order_by("?")
 
     context = {
         "category_list":category_list,
         "firstproducts":firstproducts[:4],
         "secondproducts":secondproducts[4:7],
+        "randomproductlist":randomproductlist[2:6],  
     }
     return render(request,"index.html",context)
