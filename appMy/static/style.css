@@ -57,15 +57,21 @@ button:hover {
 }
 /* RESPONSİVE */
 /* Eğer 1200px altına düşerse */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
     .mynavbar {
         display: none;
     }
 
     .mobillogo{
-        display: block;
+        display: flex;
         justify-content: center;
         align-self: center;
+    }
+    .yuksekogun{
+        display: block;
+    }
+    .herkesicin{
+        display: block;
     }
 
 }
