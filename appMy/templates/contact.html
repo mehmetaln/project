@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+    <main>
+        <div class="container">
+            <h1 class="text-success">Email Gönder</h1>
+            <div class="d-flex flex-column gap-2 my-5">
+                <form method="POST">
+                    {% csrf_token %}
+                    <input placeholder="Ad" >
+                    <input type="text">
+                </form>
+            </div>
+        </div>
+    </main>    
+{% endblock body %}
+    

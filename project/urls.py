@@ -12,6 +12,9 @@ urlpatterns = [
     path('', indexPage, name="indexPage"),
     path('allPage/', allPage, name="allPage"),
     path('blogPage/', blogPage, name="blogPage"),
+    path('blogdetailPage/<bid>', blogdetailPage, name="blogdetailPage"),
+    path('contactPage/', contactPage, name="contactPage"),
+  
     
     
     

@@ -39,3 +39,13 @@ def blogPage(request):
         "randomproductlist":randomproductlist[6:10],  
     }
     return render(request,"blog.html",context)
+
+def blogdetailPage(request,bid):
+    blog_list = Blog.objects.filter(id=bid)
+    context= {
+        "blog_list":blog_list,
+    }
+    return render(request, "blogdetail.html", context)
+def contactPage(request):
+    
+    return render(request,"contact.html")
