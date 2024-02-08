@@ -22,3 +22,7 @@ def indexPage(request):
         "randomproductlist":randomproductlist[2:6],  
     }
     return render(request,"index.html",context)
+
+def allPage(request):
+    context ={}
+    return(request, "allpage.html", context)

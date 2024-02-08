@@ -1,10 +1,19 @@
-/* button:hover {
+button:hover {
     background-color: black !important;
     color: white !important;
     border: 2px solid white !important;
 }
-
-
+.mynavbar{
+    background-color:transparent;
+    opacity: 1;
+    height: 120px;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+}
+.mynavbar:hover {
+    background-color: white;
+}
 
 
 .mynavbar a {
@@ -14,4 +23,43 @@
 .mynavbar h1{
     color: white;
 
-} */
+
+}
+.card{
+    box-shadow: none !important; 
+}
+.mynavbar a:hover{
+    border-bottom: 2px solid black;
+}
+
+.mynavbar:hover a, .mynavbar:hover h1 {
+    color: black;
+ 
+}
+.navbar{
+    box-shadow: none !important;
+}
+
+@media screen and (max-width: 992px) {
+
+    .cart{
+        display: none;
+    }
+    .mynavbar a{
+        color: black;
+    };
+    button{
+        color: black;
+    }
+    .mycard{
+        display: none;
+    }
+    .yokbaslik{
+        display: none;
+    }
+    .yok{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
