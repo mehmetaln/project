@@ -1,44 +1,22 @@
 {% load static %}
-<nav class="navbar navnav navbar-expand-lg navbar-light fixed-top">
-    <div style="width: 100%; ">
-        <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse mynavbar" id="navbarCenteredExample">
-            <div class="logo">
-                <img  class="" src="//www.bahsbar.com/cdn/shop/files/Lights_4_copy_1_280x.png?v=1703167727" alt="">
-            </div>
-            <div class="mobillogo">
-                <img  class="" src="//www.bahsbar.com/cdn/shop/files/Lights_4_copy_1_280x.png?v=1703167727" alt="">
-
-            </div>
-            <div>
-                <ul class="kategori navbar-nav mb-2 mb-lg-0">
-                    
-                    {% for i in category_list %}
-                    <li class="nav-item"><a class="nav-link" href="#">{{ i.title }}.</a></li>
-                        
-                    {% endfor %}
-                        
-                
-                </ul>
-            </div>
-            <div  class="mobilikon">
-                <li class="nav-item"><a class="nav-link" href="{% url 'registerPage' %}"><i class="far fa-user"></i></a></li>
+<nav class="navbar navbar-expand-lg navbar-light, bg-body-tertiary mynavbar  fixed-top" style="background-color: transparent; opacity: 5;" >
+    <div class="container">
+        <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i  class="fas fa-bars"></i> </button>
+        <div><a class="navbar-brand mt-2 mt-lg-0" href="#"> <img src="//www.bahsbar.com/cdn/shop/files/46_280x.png?v=1706821366" height="15" alt="MDB Logo"loading="lazy" /></a></div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% for i in category_list %}
+                <li class="nav-item"><a class="nav-link" href="#">{{ i.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="d-flex align-items-center">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-search"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href=""><i class="far fa-user"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-shopping-basket"></i></a></li>
             </div>
-            <div>
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-search"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href=""><i class="far fa-user"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-shopping-basket"></i></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="text-white" style="background-color: black; height: 45px; display: flex; align-items: center; justify-content: center; position: absolute; top: 0; left: 0; right: 0; z-index: 1000;">
-            <h6> <i class="text-warning fas fa-gift"></i> LANSMANA ÖZEL İNDİRİM KODU: BAHS20 <i class="text-warning fas fa-gift"></i></h6>
         </div>
     </div>
+    <div class="text-white"style="background-color: black; height: 45px; display: flex; align-items: center; justify-content: center; position: absolute; top: 0; left: 0; right: 0; z-index: 1000;">  <h6> <i class="text-warning fas fa-gift"></i> LANSMANA ÖZEL İNDİRİM KODU: BAHS20</h6> </div>
 </nav>
-
-

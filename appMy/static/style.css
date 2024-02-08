@@ -1,25 +1,11 @@
-.mynavbar.hovered {
-    background-color: white;
-}
-
-.mynavbar.hovered a, .mynavbar.hovered h1 {
-    color: black;
-}
-.logo img:hover{
-    color: black;
+/* button:hover {
+    background-color: black !important;
+    color: white !important;
+    border: 2px solid white !important;
 }
 
 
-.mynavbar {
-    background-color: transparent;
-    opacity: 1;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 1rem;
-    box-shadow: none !important;
-}
+
 
 .mynavbar a {
     color: white;
@@ -28,51 +14,4 @@
 .mynavbar h1{
     color: white;
 
-}
-button:hover {
-    background-color: black !important;
-    color: white !important;
-    border: 2px solid white !important;
-}
-
-.mobillogo{
-    display: none;
-}
-.mynavbar:hover {
-    background-color: white;
-}
-
-.mynavbar:hover a, .mynavbar:hover h1 {
-    color: black;
-}
-.navbar{
-    box-shadow: none !important;
-}
-
-.card{
-    box-shadow: none !important;
-}
-.mobilikon{
-    display: none;
-}
-/* RESPONSİVE */
-/* Eğer 1200px altına düşerse */
-@media screen and (max-width: 1000px) {
-    .mynavbar {
-        display: none;
-    }
-
-    .mobillogo{
-        display: flex;
-        justify-content: center;
-        align-self: center;
-    }
-    .yuksekogun{
-        display: block;
-    }
-    .herkesicin{
-        display: block;
-    }
-
-}
-
+} */
