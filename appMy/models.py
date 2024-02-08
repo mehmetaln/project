@@ -19,3 +19,6 @@ class Product(models.Model):
     
     def __str__(self):
         return self.title
+class Blog(models.Model):
+    title = models.CharField(("Başlık"), max_length=150, default = 0)
+    text = models.TextField(("Text"), blank =True, default = 0)

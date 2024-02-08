@@ -24,5 +24,17 @@ def indexPage(request):
     return render(request,"index.html",context)
 
 def allPage(request):
-    context ={}
+    products_list = Product.objects.all()
+    context ={
+        "product_list":products_list,
+    }
     return render(request, "allpage.html", context)
+
+def blogPage(request):
+    blog_list = Blog.objects.all(),
+    
+    
+    context = {
+        "blog_list":blog_list,
+    }
+    return render(request,"blog.html",context)

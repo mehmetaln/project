@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+    <main>
+        <div class="container">
+            <div style="height: 400px; display: flex; justify-content: center; align-items: center;">
+                <div><h1>Blog Yazıları</h1></div>
+             <div>
+                <ul> 
+                    {% for i in blog_list %}
+                        <li class="text-black"><a href="">{{ i.title }}</a></li>  
+                    {% endfor %}
+                </ul>
+             </div>
+            </div>
+        </div>
+    </main>
+{% endblock body %}
+    

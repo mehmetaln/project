@@ -11,6 +11,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', indexPage, name="indexPage"),
     path('allPage/', allPage, name="allPage"),
+    path('blogPage/', blogPage, name="blogPage"),
     
     
     
