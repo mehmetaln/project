@@ -29,10 +29,10 @@
         </div>
 
         <div class="container">
-            <h1 class="yokbaslik heading h1 text-black text-center text-bold m-5" style="font-size: 60px; font-weight: bold;">Kampanyalı Paketler.</h1>
+            <h1 class=" heading h1 text-black text-center text-bold m-5" style="font-size: 60px; font-weight: bold;">Kampanyalı Paketler.</h1>
             <div class="row">
                 {% for i in firstproducts  %}
-                <div class="col-3 mycard ">  
+                <div class="col-lg-3 col-sm-6 ">  
                     <div class= "card">
                         <img src= "{{ i.img.url }}" alt="">
                         <a class="text-center text-black fw-bold" href="">{{ i.title }}</a>
@@ -75,21 +75,27 @@
 
 
 
-        <div class="yok" style="margin-top: 120px; display: flex; justify-content: center; width: 100%; height: 750px;">
-            <div style="width: 50%;" class="position-relative ">
-                <div style="background-color: orangered; width: 70%; height: 650px;"></div>
-                <div >
-                    <img width="60%" height="575px" style="position: absolute; bottom: 19%; left: 20%;" src="{% static 'img/bosresim.webp' %}" alt="">
+        <!-- <div style="margin-top: 120px; display: flex; justify-content: center; width: 100%; height: 750px;">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div style="width: 50%;" class="position-relative ">
+                        <div style="background-color: orangered; width: 70%; height: 650px;"></div>
+                        <div >
+                            <img width="60%" height="575px" style="position: absolute; bottom: 19%; left: 20%;" src="{% static 'img/bosresim.webp' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div style="width: 50%; height: auto; display: flex; justify-content: center; align-items: center;">
+                        <div class="mybuttondiv">
+                            <h1 style="font-weight: bold; font-size: 50px; color: black;" class="text-center">Herkes için sağlıklı <br> atıştırmalıklar</h1>
+                            <p class="text-center">Enerji için hurma, bağışıklık için probiyotikler, kas iyileşmesi için protein. <br> Bitkisel proteinler açısından çok zengin ve doğal şeker dışında ilave <br> şeker bulunmayan bu atıştırmalık, protein alımını sağlıklı bir şekilde <br> artırmak isteyen sporcular için antrenman öncesi veya sonrası ideal bir <br> atıştırmalıktır.</p>
+                            <div class="text-center mybutton"><button style="background-color: white;  border: 2px solid black; color: black; width: 200px; height: 70px;">Hemen keşfet.</button></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div style="width: 50%; height: auto; display: flex; justify-content: center; align-items: center;">
-                <div class="mybuttondiv">
-                    <h1 style="font-weight: bold; font-size: 50px; color: black;" class="text-center">Herkes için sağlıklı <br> atıştırmalıklar</h1>
-                    <p class="text-center">Enerji için hurma, bağışıklık için probiyotikler, kas iyileşmesi için protein. <br> Bitkisel proteinler açısından çok zengin ve doğal şeker dışında ilave <br> şeker bulunmayan bu atıştırmalık, protein alımını sağlıklı bir şekilde <br> artırmak isteyen sporcular için antrenman öncesi veya sonrası ideal bir <br> atıştırmalıktır.</p>
-                    <div class="text-center mybutton"><button style="background-color: white;  border: 2px solid black; color: black; width: 200px; height: 70px;">Hemen keşfet.</button></div>
-                </div>
-            </div>
-        </div>
+        </div> -->
 
 
         <div class="yok" style="display: flex; justify-content: center; margin-top: 200px;">
@@ -106,10 +112,10 @@
         <div><img width="100%" height="700px" src="{% static 'img/bosresim3.webp' %}" alt=""></div>
 
         <div class="container">
-            <h1 class="yokbaslik heading h1 text-black text-center text-bold m-5" style="font-size: 60px; font-weight: bold;">İlginizi Çekebilecek tatlar.</h1>
+            <h1 class="heading h1 text-black text-center text-bold m-5" style="font-size: 60px; font-weight: bold;">İlginizi Çekebilecek tatlar.</h1>
             <div class="row">
                 {% for i in randomproductlist  %}
-                <div class="col-3 mycard">
+                <div class="col-lg-3 col-sm-6 ">
                     
                     <div class= "card">
                         <img src= "{{ i.img.url }}" alt="">

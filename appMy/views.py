@@ -31,10 +31,11 @@ def allPage(request):
     return render(request, "allpage.html", context)
 
 def blogPage(request):
-    blog_list = Blog.objects.all(),
-    
+    blog_list = Blog.objects.all()
+    randomproductlist= Product.objects.all().order_by("?")    
     
     context = {
         "blog_list":blog_list,
+        "randomproductlist":randomproductlist[6:10],  
     }
     return render(request,"blog.html",context)

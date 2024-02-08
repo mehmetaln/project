@@ -5,17 +5,39 @@
 {% block body %}
     <main>
         <div class="container">
-            <div style="height: 400px; display: flex; justify-content: center; align-items: center;">
-                <div><h1>Blog Yazıları</h1></div>
-             <div>
-                <ul> 
-                    {% for i in blog_list %}
-                        <li class="text-black"><a href="">{{ i.title }}</a></li>  
-                    {% endfor %}
-                </ul>
-             </div>
+           <div style="margin-top: 120px;">
+            <div class="text-center"><h1>Blog yazıları.</h1></div>
+            <div style="height: 400px; display: flex; justify-content: start; align-items: center;">
+                <div>
+                    <ul>
+
+                        {% for i in blog_list %}
+                            <li><a class="text-black" style="text-decoration: underline; font-size: large; font-weight: bold;" href="#">{{ i.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
+            <div>
+                <h1 class="heading h1 text-black text-center text-bold m-5" style="font-size: 60px; font-weight: bold;">İlginizi Çekebilecek tatlar.</h1>
+            <div class="row">
+                {% for i in randomproductlist  %}
+                <div class="col-lg-3 col-sm-6 ">
+                    
+                    <div class= "card">
+                        <img src= "{{ i.img.url }}" alt="">
+                        <a class="text-center text-black fw-bold" href="">{{ i.title }}</a>
+                
+                        <div style="display: flex; justify-content: center;">
+                            <p style="font-weight: bold; color: rgb(132, 216, 5);"> {{ i.price }}TL &emsp;<del style="color: black;">{{ i.oldprice }}</del></p>
+                        </div>
+                    
+                    </div>
+                    
+                </div>
+                {% endfor %}
+            </div>        
+            </div>
+           </div>
         </div>
     </main>
 {% endblock body %}
-    
