@@ -25,4 +25,4 @@ def indexPage(request):
 
 def allPage(request):
     context ={}
-    return(request, "allpage.html", context)
+    return render(request, "allpage.html", context)
