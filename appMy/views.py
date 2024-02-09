@@ -42,10 +42,19 @@ def blogPage(request):
 
 def blogdetailPage(request,bid):
     blog_list = Blog.objects.filter(id=bid)
+    randomproductlist= Product.objects.all().order_by("?")
+    
     context= {
         "blog_list":blog_list,
+        "randomproductlist":randomproductlist[7:11],
     }
     return render(request, "blogdetail.html", context)
 def contactPage(request):
     
-    return render(request,"contact.html")
+
+    context = {
+  
+
+    }
+    
+    return render(request,"contact.html", context)
