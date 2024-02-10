@@ -20,7 +20,7 @@ def registerPage(request):
         password = request.POST.get("password")
     
         if fname and lname and email and username and password:
-            if not User.objects.filter(email = email).exists(): 
+            if not User.objects.filter(username = username).exists(): 
                 random_link =get_random_string(44)  # random linkimizin string kısmı 
                 emaillink = "http://"+request.get_host()+"/emailActive/"+random_link #request.get_host methodu bize girişli olan kullanıcın host bilgilerini verir
                 user = User.objects.create_user(first_name =fname, last_name = lname, username=username, email = email, password=password)
@@ -28,12 +28,13 @@ def registerPage(request):
                 user.save() # userı kaydet ama tabi aktif olarak degil yapmıza saglar
 
                 send_mail(  # Bu kısmda ise mesajımızı düzenleyioruz  
-                "Kayıdı tamamlamak için mailenizez gelen linki onaylayınız", # Buraya başlık veya konu gelicek
+                "Kayıdı tamamlamak için mailenize gelen linki onaylayınız", # Buraya başlık veya konu gelicek
                 f"Lütfen email hesabınızı onaylayınız: {emaillink}", # Bu kısım mailde gözükecek Kısım
                 EMAIL_HOST_USER, # Settingsden çektiğimiz olmassa olmaz host kısmız 
                 [email], # Burası ilgili olan kullanıcın maili
                 fail_silently=False, # bunu boşver
                 )
+                messages.success(request,"Kayıt işlemlerinin tamamlanması için lütfen maila adresinizi onaylayınjz")
             else:
                     messages.error(request,"Bu Kullanıcı Adı ile kayıtlı bir üye var.")
         else:
@@ -56,3 +57,27 @@ def emailActive(request,elink): # Bu ksımda maile bir gelen link onaylandıgın
         messages.success(request, "Emailiniz başarı ile Onaylandı")
         
     return redirect("loginPage")   
+
+
+def loginPage(request):
+    
+    if request.method =="POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        
+        user = authenticate(username = username , password = password)
+        if user:
+            login(request,user)
+            messages.success(request,"Giriş Başarılı")
+            return redirect("indexPage")
+        else:
+            messages.error(request, "Kullanıcı adı veya şifreniz yanlış")
+    context = {
+        
+    }
+
+    return render(request,"user/login.html", context)
+
+# def logoutUser(request):
+#     logout(request)
+#     return redirect("indexPage")

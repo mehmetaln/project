@@ -14,4 +14,4 @@ class Usermy(models.Model):
 
     def save(self):
       print("Usermy model save ====== ")
-      super().save() #bu kısım usermyda ki degişikleri kaydetmemzie yarıyor mail göndeririken kullanmamız gerebilir     
+      super().save() #bu kısım usermyda ki degişikleri kaydetmemzie yarıyor mail göndeririken kullanmamız gerebilir 

@@ -18,7 +18,7 @@ def indexPage(request):
     context = {
         "category_list":category_list,
         "firstproducts":firstproducts[:4],
-        "secondproducts":secondproducts[4:7],
+        "secondproducts":secondproducts[4:6],
         "randomproductlist":randomproductlist[2:6],  
     }
     return render(request,"index.html",context)
