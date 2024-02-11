@@ -71,7 +71,7 @@ def contactPage(request):
             'host': 'smtp.gmail.com',
             'port': 587,
             'host_user': EMAIL_HOST_USER,
-            'host_password': 'rdkiozsfygwfcscp',
+            'host_password': 'rvvoomrymvntzdgo',
         }
 
         # E-posta gönderme işlemi

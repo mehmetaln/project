@@ -33,8 +33,8 @@ def registerPage(request):
     if request.method == "POST":
         fname = request.POST.get("fname")
         lname = request.POST.get("lname")
-        email = request.POST.get("email")
         username = request.POST.get("username")
+        email = request.POST.get("email")
         password = request.POST.get("password")
     
         if fname and lname and email and username and password:
@@ -45,6 +45,10 @@ def registerPage(request):
                 user.is_active = False # kullanıcıyı oluştur ama aktif hale getirme diyoruz bu kısımda maili onayladıktan sonra aktif hale getireceğiz 
                 user.save() # userı kaydet ama tabi aktif olarak degil yapmıza saglar
 
+                
+                usermy = Usermy(user =user, user_active =random_link) # Usermy içerisinde ki objeşleri buradaki viewsde lazım olan yerlere eşitliyoruz
+                usermy.save() # usermy kısmına kaydediyoruz burada oneöli olan useravtivite
+                
                 send_mail(  # Bu kısmda ise mesajımızı düzenleyioruz  
                 "Kayıdı tamamlamak için mailenize gelen linki onaylayınız", # Buraya başlık veya konu gelicek
                 f"Lütfen email hesabınızı onaylayınız: {emaillink}", # Bu kısım mailde gözükecek Kısım
@@ -54,7 +58,7 @@ def registerPage(request):
                 )
                 messages.success(request,"Kayıt işlemlerinin tamamlanması için lütfen maila adresinizi onaylayınjz")
             else:
-                    messages.error(request,"Bu Kullanıcı Adı ile kayıtlı bir üye var.")
+                messages.error(request,"Bu Kullanıcı Adı ile kayıtlı bir üye var.")
         else:
             messages.error(request,"Tüm Alanları Doldurunuz")
 
@@ -73,6 +77,8 @@ def emailActive(request,elink): # Bu ksımda maile bir gelen link onaylandıgın
         # Kullanıcı değişikliklerini kaydet
         myuser.user.save() # burada tekrar kaydeiyoruz activesi true olacak şekilde 
         messages.success(request, "Emailiniz başarı ile Onaylandı")
+    else:
+        messages.error(request, "Geçersiz onay")
         
     return redirect("loginPage")  
 

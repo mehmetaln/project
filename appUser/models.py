@@ -6,7 +6,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Usermy(models.Model):
-    user = models.OneToOneField(User, verbose_name=("Kullanıcı"), on_delete=models.CASCADE)
+    user = models.OneToOneField(User, verbose_name=("Kullanıcı"), on_delete=models.CASCADE, null = True)
     tel = models.CharField(("Telefon"), max_length=50, default = "-")
     address = models.TextField(("Adres"), blank =True,)
     user_active = models.CharField(("Kullancı Dogrulama Linki"), max_length=50, default=0) # Kullanıcya email aracılı ile link göndermek için kullandıgımız kısım
