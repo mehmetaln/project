@@ -24,6 +24,7 @@ urlpatterns = [
   path('registerPage/', registerPage, name="registerPage"),
   path('emailActive/<elink>',emailActive, name='emailActive'),
   path('loginPage/', loginPage, name="loginPage"),
+  path('hesapPage/', hesapPage, name="hesapPage"),
   
   
 ] + static (settings.MEDIA_URL, document_root =settings.MEDIA_ROOT)

@@ -85,6 +85,10 @@ def emailActive(request,elink): # Bu ksımda maile bir gelen link onaylandıgın
 
 
 
+def hesapPage(request):
+    context = {}
+    return render(request, "user/hesap.html", context)
+
 # def logoutUser(request):
 #     logout(request)
 #     return redirect("indexPage")
