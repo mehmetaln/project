@@ -23,7 +23,7 @@ urlpatterns = [
   # USER
   path('registerPage/', registerPage, name="registerPage"),
   path('loginPage/', loginPage, name="loginPage"),
-   path('emailActive/<elink>',emailActive, name='emailActive'),
+  path('emailActive/<elink>',emailActive, name='emailActive'),
   
   
 ] + static (settings.MEDIA_URL, document_root =settings.MEDIA_ROOT)

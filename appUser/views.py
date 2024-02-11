@@ -11,6 +11,24 @@ from project.settings import EMAIL_HOST_USER # settingsden çektigimiz host kıs
 from django.utils.crypto import get_random_string # random string ifadeler getirmemize yarar () parantez içerisnde kaç haneli olmasını istediğimizi yazarız
 from appUser.models import *
 
+def loginPage(request):
+    
+    if request.method =="POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        
+        user = authenticate(username = username , password = password)
+        if user:
+            login(request,user)
+            messages.success(request,"Giriş Başarılı")
+            return redirect("indexPage")
+        else:
+            messages.error(request, "Kullanıcı adı veya şifreniz yanlış")
+    context = {}
+
+    return render(request,"user/login.html", context)
+
+
 def registerPage(request):
     if request.method == "POST":
         fname = request.POST.get("fname")
@@ -56,27 +74,10 @@ def emailActive(request,elink): # Bu ksımda maile bir gelen link onaylandıgın
         myuser.user.save() # burada tekrar kaydeiyoruz activesi true olacak şekilde 
         messages.success(request, "Emailiniz başarı ile Onaylandı")
         
-    return redirect("loginPage")   
+    return redirect("loginPage")  
 
 
-def loginPage(request):
-    
-    if request.method =="POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-        
-        user = authenticate(username = username , password = password)
-        if user:
-            login(request,user)
-            messages.success(request,"Giriş Başarılı")
-            return redirect("indexPage")
-        else:
-            messages.error(request, "Kullanıcı adı veya şifreniz yanlış")
-    context = {
-        
-    }
 
-    return render(request,"user/login.html", context)
 
 # def logoutUser(request):
 #     logout(request)

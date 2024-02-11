@@ -52,7 +52,6 @@ def blogdetailPage(request,bid):
 
 
 
-# views.py
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
@@ -72,7 +71,7 @@ def contactPage(request):
             'host': 'smtp.gmail.com',
             'port': 587,
             'host_user': EMAIL_HOST_USER,
-            'host_password': 'ultzvakheylfjjiw',
+            'host_password': 'rdkiozsfygwfcscp',
         }
 
         # E-posta gönderme işlemi
