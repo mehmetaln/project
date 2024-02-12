@@ -49,6 +49,14 @@ def blogdetailPage(request,bid):
     }
     return render(request, "blogdetail.html", context)
 
+def detailPage(request,pid):
+    product_detail = Product.objects.filter(id = pid)
+    
+    context = {
+        "product_detail":product_detail,
+    }
+    return render(request,"detail.html",context)
+
 
 
 
@@ -89,3 +97,12 @@ def contactPage(request):
 
     context = {}
     return render(request, "contact.html", context)
+
+
+def detailPage(request,pid):
+    product_detail = Product.objects.filter(id = pid)
+    
+    context = {
+        "product_detail":product_detail,
+    }
+    return render(request,"detailPage",context)

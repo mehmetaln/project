@@ -13,7 +13,7 @@
                 <div class="col-lg-4 col-sm-6">  
                     <div class= "card">
                         <img src= "{{ i.img.url }}" alt="">
-                        <a class="text-center text-black fw-bold" href="">{{ i.title }}</a>
+                        <a class="text-center text-black fw-bold" href="{% url 'detailPage' i.id %}">{{ i.title }}</a>
                         <div style="display: flex; justify-content: center;">
                             <p style="font-weight: bold; color: rgb(132, 216, 5);"> {{ i.price }}TL &emsp;<del style="color: black;">{{ i.oldprice }}</del></p>
                         </div>

@@ -14,6 +14,7 @@ urlpatterns = [
     path('blogPage/', blogPage, name="blogPage"),
     path('blogdetailPage/<bid>', blogdetailPage, name="blogdetailPage"),
     path('contactPage/', contactPage, name="contactPage"),
+    path('detailPage/<pid>', detailPage, name="detailPage"),
   
     
     
