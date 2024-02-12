@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 
+class People(models.Model):
+    img = models.ImageField(("Başlık"), upload_to="people",)
 
 
 class Category(models.Model):

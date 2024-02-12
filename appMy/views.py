@@ -51,9 +51,11 @@ def blogdetailPage(request,bid):
 
 def detailPage(request,pid):
     product_detail = Product.objects.filter(id = pid)
+    people_img = People.objects.all().order_by("?")
     
     context = {
         "product_detail":product_detail,
+        "people_img":people_img[:4],
     }
     return render(request,"detail.html",context)
 
@@ -99,10 +101,3 @@ def contactPage(request):
     return render(request, "contact.html", context)
 
 
-def detailPage(request,pid):
-    product_detail = Product.objects.filter(id = pid)
-    
-    context = {
-        "product_detail":product_detail,
-    }
-    return render(request,"detailPage",context)

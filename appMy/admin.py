@@ -9,6 +9,7 @@ from django.contrib.auth.admin import UserAdmin
 admin.site.register(Category)
 admin.site.register(Product)
 admin.site.register(Blog)
+admin.site.register(People)
 
  
 class UsermyInline(admin.StackedInline):

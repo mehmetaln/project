@@ -6,24 +6,48 @@
 
 <main>
     <div class="container">
-        <div class="row">
-            
+        <div class="row" style="margin: auto; margin-top: 120px;">
+
             {% for i in product_detail %}
-            <div class="col-6">
-                <img src="{{ i.img.url }}" alt="">
+            <div class="col-lg-6 col-sm-12">
+                <img width="600px" height="600px" src="{{ i.img.url }}" alt="">
             </div>
-            <div class="col-6">
-                <div><h2>{{ i.title }}</h2></div>
-                <div><p>{{ i.price }}</p></div>
+            <div class="col-lg-6 col-sm-12 col-md-12" style="margin-top: 75px;">
+                <h1 class=" text-black fw-bold">{{ i.title }}</h1>
+                <p style="font-weight: bold; color: rgb(132, 216, 5);"> {{ i.price }}TL &emsp;<del
+                        style="color: black;">{{ i.oldprice }}</del></p>
                 <hr>
-                <div><p>{{ i.text }}</p></div>
-                <div class="text-center"><button  style="background-color: white;  border: 2px solid black; width: 135px; height: 50px; ">Sepete Ekle</button> </div>
+                <div>
+                    <p>{{ i.text }}</p>
+                </div>
+                <div class="text-center"><button
+                        style="background-color: white;  border: 2px solid black; width: 100%; height: 50px; ">Sepete
+                        Ekle</button> </div>
+                <img src="{% static 'img/teslimat.avif' %}" alt="">
             </div>
             {% endfor %}
         </div>
+
+
+    </div>
+    <h1 class="text-center text-black mt-5">Güne pozitif başlayanlarda!</h1>
+
+    <div class="row my-5 ">
+        {% for p in people_img %}
+        <div class="col-3">
+            <div class="card">
+                <img height="600px" src="{{ p.img.url }}" class="card-img-top" />
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="container">
+        <h1 class="text-center my-5 text-black fw-bold">bahs. öğün tozu ile <br> hedeflerine ulaş!</h1>
+        <p class="text-center my-2 fw-bold text-black">Öğün tozu ile hedeflerinize kolayca ulaşabilirsiniz. Kilo verme, kas kazanma veya sağlıklı <br>  beslenmek için sizlere yardımcı olacaktır.</p>
+        
+   
     </div>
 </main>
 
 
 {% endblock body %}
-    
