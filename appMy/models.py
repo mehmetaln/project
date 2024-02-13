@@ -24,3 +24,8 @@ class Product(models.Model):
 class Blog(models.Model):
     title = models.CharField(("Başlık"), max_length=150, default = 0)
     text = models.TextField(("Text"), blank =True, default = 0)
+
+class Saglik(models.Model):
+    img = models.ImageField(("Resim"), upload_to="saglik")
+    title = models.CharField(("Baslık"), max_length=150)
+    text = models.TextField(("text"))

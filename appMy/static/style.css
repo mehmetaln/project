@@ -40,26 +40,8 @@ button:hover {
     box-shadow: none !important;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 992px) {
+  
 
-    .cart{
-        display: none;
-    }
-    .mynavbar a{
-        color: black;
-    };
-    button{
-        color: black;
-    }
-    .mycard{
-        display: none;
-    }
-    .yokbaslik{
-        display: none;
-    }
-    .yok{
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+    
 }
