@@ -11,6 +11,7 @@ admin.site.register(Product)
 admin.site.register(Blog)
 admin.site.register(People)
 admin.site.register(Saglik)
+admin.site.register(Comment)
 
  
 class UsermyInline(admin.StackedInline):

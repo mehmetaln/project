@@ -53,11 +53,13 @@ def detailPage(request,pid):
     product_detail = Product.objects.filter(id = pid)
     people_img = People.objects.all().order_by("?")
     saglik_list = Saglik.objects.all()
+    comment_list = Comment.objects.all()
     
     context = {
         "product_detail":product_detail,
         "people_img":people_img[:4],
         "saglik_list":saglik_list,
+        "comment_list":comment_list,
     }
     return render(request,"detail.html",context)
 
