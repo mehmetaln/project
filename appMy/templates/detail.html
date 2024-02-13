@@ -5,6 +5,13 @@
 {% block body %}
 
 <main>
+    <div class="row">
+        <div class=" col-lg-12 col-sm-12">
+            <div class="header col-sm-12" style="display: flex; justify-content: center; align-items: center; background-color: black; width: 100%; height: 300px; margin-top: 100px;">
+                <p style="font-size: 80px; font-weight: bold;" class="text-center text-white" >Lansmana özel ek %20 indirim. <br> KOD: BAHS20</p>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row" style="margin: auto; margin-top: 120px;">
 
@@ -34,7 +41,7 @@
 
     <div class="row my-5 ">
         {% for p in people_img %}
-        <div class="col-3">
+        <div class="col-lg-3 col-sm-12">
             <div class="card">
                 <img height="600px" src="{{ p.img.url }}" class="card-img-top" />
             </div>
@@ -45,7 +52,7 @@
         <h1 class="text-center my-5 text-black fw-bold">bahs. öğün tozu ile <br> hedeflerine ulaş!</h1>
         <p class="text-center my-2 fw-bold text-black">Öğün tozu ile hedeflerinize kolayca ulaşabilirsiniz. Kilo verme, kas kazanma veya sağlıklı <br>  beslenmek için sizlere yardımcı olacaktır.</p>
         
-   
+        
     </div>
 </main>
 
