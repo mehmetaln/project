@@ -53,13 +53,16 @@ def detailPage(request,pid):
     product_detail = Product.objects.filter(id = pid)
     people_img = People.objects.all().order_by("?")
     saglik_list = Saglik.objects.all()
-    comment_list = Comment.objects.filter(product = product_detail)
+    comment_list = Comment.objects.filter(product = product_detail.first())
     
     
     if request.method == "POST":
         text = request.POST.get("text")
-        comment = Comment(text = text, product =product_detail, user = request.user)
-        comment.save()
+        submit = request.POST.get("submit")
+        if product_detail.exists():
+            product = product_detail.first()
+            comment = Comment(text = text, product =product_detail, user = request.user)
+            comment.save()
     
     context = {
         "product_detail":product_detail,

@@ -40,7 +40,7 @@ button:hover {
     box-shadow: none !important;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 992px) {
   
     /* .mynavbar {
         display: none;
