@@ -61,7 +61,7 @@ def detailPage(request,pid):
         submit = request.POST.get("submit")
         if product_detail.exists():
             product = product_detail.first()
-            comment = Comment(text = text, product =product_detail, user = request.user)
+            comment = Comment(text = text, product =product_detail.first(), user = request.user)
             comment.save()
     
     context = {
