@@ -7,8 +7,10 @@
 <main>
     <div class="row">
         <div class=" col-lg-12 col-sm-12">
-            <div class="header col-sm-12" style="display: flex; justify-content: center; align-items: center; background-color: black; width: 100%; height: 300px; margin-top: 100px;">
-                <p style="font-size: 80px; font-weight: bold;" class="text-center text-white" >Lansmana özel ek %20 indirim. <br> KOD: BAHS20</p>
+            <div class="header col-sm-12"
+                style="display: flex; justify-content: center; align-items: center; background-color: black; width: 100%; height: 300px; margin-top: 100px;">
+                <p style="font-size: 80px; font-weight: bold;" class="text-center text-white">Lansmana özel ek %20
+                    indirim. <br> KOD: BAHS20</p>
             </div>
         </div>
     </div>
@@ -50,8 +52,9 @@
     </div>
     <div class="container">
         <h1 class="text-center my-5 text-black fw-bold">bahs. öğün tozu ile <br> hedeflerine ulaş!</h1>
-        <p class="text-center my-2 fw-bold text-black">Öğün tozu ile hedeflerinize kolayca ulaşabilirsiniz. Kilo verme, kas kazanma veya sağlıklı <br>  beslenmek için sizlere yardımcı olacaktır.</p>
-        
+        <p class="text-center my-2 fw-bold text-black">Öğün tozu ile hedeflerinize kolayca ulaşabilirsiniz. Kilo verme,
+            kas kazanma veya sağlıklı <br> beslenmek için sizlere yardımcı olacaktır.</p>
+
         <div class="row my-5">
             {% for s in saglik_list  %}
             <div class="col-lg-4 col-sm-12">
@@ -66,7 +69,61 @@
             {% endfor %}
         </div>
         <h2 class="text-center text-black fw-bold">Müşteri Yorumları</h2>
+        <section>
+            <div class="comments-list">
+                <div class="section-heading text-light">
 
+                    {% if comment_list %}
+                    <div class="fs-4 fw-bold my-3">Yorumlar</div>
+                    {% else %}
+                    <div class="fs-4 fw-bold my-3 text-black">Yorum Bulunmuyor</div>
+                    {% endif %}
+
+                </div>
+
+                {% for i in comment_list %}
+                <div class="row">
+                    <div class="col-sm-12 col-12">
+                        <div class="d-flex justify-content-between">
+                            <div class="fs-4 fw-bold">{{ i.user }}</div>
+                            <div><i class="fa fa-clock-o"></i> {{ i.date_now }}</div>
+                        </div>
+                        <div class="card-data">
+                            <ul class="list-unstyled">
+                                <li class="comment-date"></li>
+                            </ul>
+                        </div>
+                        <p class="comment-text">{{ i.text }}</p>
+                    </div>
+                    <hr>
+
+                </div>
+                {% endfor %}
+
+            </div>
+        </section>
+        <hr class="between-sections">
+        <section>
+            <div class="reply-form">
+                <div class="fs-4 fw-bold my-3 text-black">Yorum Yap</div>
+                <div class="row">
+                    <!--Content column-->
+                    <div class="col-sm-12 col-12">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <textarea name="text" cols="30" rows="6" class="form-control"
+                                placeholder="Yorum Yazınız"></textarea>
+                            <div class="text-end my-3">
+                                <button class="btn btn-light text-black" type="submit">Paylaş</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!--/.Content column-->
+                </div>
+                <!--/.Third row-->
+            </div>
+        </section>
+        <!-- COMMENT END -->
     </div>
 </main>
 
