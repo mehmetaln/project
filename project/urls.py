@@ -15,6 +15,9 @@ urlpatterns = [
     path('blogdetailPage/<bid>', blogdetailPage, name="blogdetailPage"),
     path('contactPage/', contactPage, name="contactPage"),
     path('detailPage/<pid>', detailPage, name="detailPage"),
+    path('sepetPage/', sepetPage, name = "sepetPage"),
+    path('sepetDelete/<sid>', sepetDelete, name = "sepetDelete"),
+    path('satinAl/<bid>', satinAl, name = "satinAl"),
   
     
     

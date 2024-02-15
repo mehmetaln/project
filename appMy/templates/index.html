@@ -39,7 +39,13 @@
                         <div style="display: flex; justify-content: center;">
                             <p style="font-weight: bold; color: rgb(132, 216, 5);"> {{ i.price }}TL &emsp;<del style="color: black;">{{ i.oldprice }}</del></p>
                         </div>
-                        <div class="text-center"><button  style="background-color: white;  border: 2px solid black; width: 135px; height: 50px; ">Sepete Ekle</button> </div>
+                        <div class="text-center">
+                            <form method="POST">
+                                {% csrf_token %}
+
+                                <button type="submit" name="submit"   style="background-color: white;  border: 2px solid black; width: 135px; height: 50px; ">Sepete Ekle</button> 
+                            </form>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
@@ -66,7 +72,11 @@
                         <div style="display: flex; justify-content: center;">
                             <p style="font-weight: bold; color: rgb(132, 216, 5);"> {{ i.price }}TL &emsp;<del style="color: black;">{{ i.oldprice }}</del></p>
                         </div>
-                        <div class="text-center"><button  style="background-color: white;  border: 2px solid black; width: 135px; height: 50px; ">Sepete Ekle</button> </div>
+                        <div class="text-center"> <form method="POST">
+                            {% csrf_token %}
+
+                            <button type="submit" name="submit"   style="background-color: white;  border: 2px solid black; width: 135px; height: 50px; ">Sepete Ekle</button> 
+                        </form></div>
                     </div>
                 </div>   
                 {% endfor %}
@@ -124,7 +134,7 @@
                         <div style="display: flex; justify-content: center;">
                             <p style="font-weight: bold; color: rgb(132, 216, 5);"> {{ i.price }}TL &emsp;<del style="color: black;">{{ i.oldprice }}</del></p>
                         </div>
-                    
+                        
                     </div>
                     
                 </div>

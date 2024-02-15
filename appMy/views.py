@@ -65,10 +65,22 @@ def detailPage(request,pid):
     if request.method == "POST":
         text = request.POST.get("text")
         submit = request.POST.get("submit")
-        if product_detail.exists():
-            product = product_detail.first()
-            comment = Comment(text = text, product =product_detail.first(), user = request.user)
-            comment.save()
+        if submit == "commentSubmit":
+            if product_detail.exists():
+                product = product_detail.first()
+                comment = Comment(text = text, product =product_detail.first(), user = request.user)
+                comment.save()
+        if submit == "sepetSubmit":
+             if product_detail.exists():
+                product_detail= product_detail.first()
+                
+                adet = int(request.POST.get("adet"))
+                toplam = adet * float(product_detail.price)
+                
+                
+                sepet = Sepet(product=product_detail, user=request.user, adet=adet, toplam=toplam) 
+                sepet.save()
+                return redirect("sepetPage")
     
     
     
@@ -120,4 +132,28 @@ def contactPage(request):
     context = {}
     return render(request, "contact.html", context)
 
+def sepetPage(request):
+    sepet_list = Sepet.objects.filter(user = request.user)
+    
+    context = {
+         "sepet_list":sepet_list, 
 
+    }
+    return render(request,"sepet.html", context)
+
+def satinAl(request,bid):
+    
+    urun = Product.objects.filter(id=bid) 
+    sepet = Sepet.objects.all()
+  
+    messages.success(request,"Başarı ile Alındı")
+    if sepet:
+        sepet.delete()
+        return redirect("sepetPage")
+    
+def sepetDelete(request,sid): # silme fonksşyouzmu  sepeti
+    sepet =Sepet.objects.get(id=sid)
+    sepet.delete()
+    
+    
+    return redirect("sepetPage")

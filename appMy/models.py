@@ -38,3 +38,14 @@ class Comment(models.Model):
        
     def __str__(self):
         return self.product.title
+
+class Sepet(models.Model):
+    product = models.ForeignKey(Product, verbose_name=("Ürün"), on_delete=models.CASCADE)
+    user = models.ForeignKey(User, verbose_name=("Kullanıcı"), on_delete=models.CASCADE)
+    adet = models.IntegerField(("Adet"),default = 1)
+    toplam = models.FloatField(("Toplam Fiyat"), default = 0)
+
+    
+    def __str__(self):
+        return self.user.username
+    

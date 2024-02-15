@@ -28,9 +28,12 @@
                 <div>
                     <p>{{ i.text }}</p>
                 </div>
-                <div class="text-center"><button
-                        style="background-color: white;  border: 2px solid black; width: 100%; height: 50px; ">Sepete
-                        Ekle</button> </div>
+                <div class="text-center"> <form method="POST">
+                    {% csrf_token %}
+                    <input class="form-control text-nowrap" style="width: 75px;" type="number" name="adet" value="1" min="1" max="5">
+                    <button type="submit" name="submit"  class="my-3" value="sepetSubmit"  style="background-color: white;  border: 2px solid black; width: 100%; height: 50px; ">Sepete Ekle</button> 
+                    
+                </form> </div>
                 <img src="{% static 'img/teslimat.avif' %}" alt="">
             </div>
             {% endfor %}
@@ -124,7 +127,7 @@
                             <textarea name="text" cols="30" rows="6" class="form-control"
                                 placeholder="Yorum Yazınız"></textarea>
                             <div class="text-end my-3">
-                                <button class="btn btn-light text-black" type="submit">Paylaş</button>
+                                <button class="btn btn-light text-black" name="submit" value="commentSubmit" type="submit">Paylaş</button>
                             </div>
                         </form>
                     </div>
