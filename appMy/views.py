@@ -88,7 +88,6 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from project.settings import EMAIL_HOST_USER
 
-@login_required
 def contactPage(request):
     if request.method == 'POST':
         # Formdan gelen verileri al

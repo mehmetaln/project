@@ -24,6 +24,7 @@
 
 </head>
 <body>    
+  
 
     <div class="position-fixed bottom-0 end-0 m-5 my-2">
         {% for i in messages %} 
@@ -41,16 +42,14 @@
 
 
     {% include 'partials/_navbar.html' %}
+ 
 
     {% block body %}
+    
    
     
     {% endblock body %}
     {% include 'partials/_footer.html' %}
-    <script>
-      import { Modal, Ripple, initMDB } from "mdb-ui-kit";
-
-      initMDB({ Modal, Ripple });
-    </script>
+  
 </body>
 </html>
