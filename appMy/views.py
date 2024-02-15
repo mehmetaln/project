@@ -5,6 +5,8 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.core.mail import send_mail # bu fonksiyonu mail göndermek için kullanıyoruz views kısmında
 from project.settings import EMAIL_HOST_USER # settingsden çektigimiz host kısmımız bunu send mail içerisinde kullanacağız
+from django.db.models import Count # Bir karekteri kaç kez yazdıgımıza dair sorgular yapmmıza yarar
+from django.db.models import Q # ve bağlacını kullanmamıza yarar baızyerlerde
 
 
 
@@ -24,6 +26,10 @@ def indexPage(request):
 
 def allPage(request):
     products_list = Product.objects.all()
+    query = request.GET.get("query")
+    print("Arama Sorgusu:", query)
+    if query:
+        products_list = products_list.filter(Q(title__icontains=query))
     context ={
         "product_list":products_list,
     }
@@ -63,6 +69,8 @@ def detailPage(request,pid):
             product = product_detail.first()
             comment = Comment(text = text, product =product_detail.first(), user = request.user)
             comment.save()
+    
+    
     
     context = {
         "product_detail":product_detail,
