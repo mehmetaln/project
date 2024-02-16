@@ -15,6 +15,19 @@ def indexPage(request):
     firstproducts =Product.objects.all()   
     secondproducts =Product.objects.all() 
     randomproductlist= Product.objects.all().order_by("?")
+    if request.method == "POST":
+        submit = request.POST.get("submit")
+        if submit == "sepetSubmit":
+             if firstproducts.exists() and secondproducts.exists():
+                firstproducts= firstproducts.first()
+                
+                adet = int(request.POST.get("adet"))
+                toplam = adet * float(firstproducts.price)
+                
+                
+                sepet = Sepet(product=firstproducts, user=request.user, adet=adet, toplam=toplam) 
+                sepet.save()
+                return redirect("sepetPage")
 
     context = {
         "category_list":category_list,
@@ -134,9 +147,11 @@ def contactPage(request):
 
 def sepetPage(request):
     sepet_list = Sepet.objects.filter(user = request.user)
+    randomproductlist= Product.objects.all().order_by("?")
     
     context = {
-         "sepet_list":sepet_list, 
+         "sepet_list":sepet_list,
+         "randomproductlist":randomproductlist[:6],
 
     }
     return render(request,"sepet.html", context)
