@@ -15,10 +15,10 @@ admin.site.register(Comment)
 admin.site.register(Sepet)
 
  
-# class UsermyInline(admin.StackedInline):
-#     model =Usermy
-#     max_num =1
-#     can_delete =False
+class UsermyInline(admin.StackedInline):
+    model =Usermy
+    max_num =1
+    can_delete =False
     
 class CustomUser(UserAdmin):
     inlines =[UsermyInline,]
