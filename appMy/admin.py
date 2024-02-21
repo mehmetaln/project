@@ -6,13 +6,13 @@ from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 
    
-admin.site.register(Category)
-admin.site.register(Product)
-admin.site.register(Blog)
-admin.site.register(People)
-admin.site.register(Saglik)
-admin.site.register(Comment)
-admin.site.register(Sepet)
+# admin.site.register(Category)
+# admin.site.register(Product)
+# admin.site.register(Blog)
+# admin.site.register(People)
+# admin.site.register(Saglik)
+# admin.site.register(Comment)
+# admin.site.register(Sepet)
 
  
 class UsermyInline(admin.StackedInline):
